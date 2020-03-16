@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace LeetCode.Code
@@ -50,6 +51,17 @@ namespace LeetCode.Code
             }
             var finalUniqueWords = uniqueWords.ToArray();
             return finalUniqueWords;
+        }
+
+        public string[] UncommonFromSentencesUsingLinq(string A, string B)
+        {
+            return Enumerable.Empty<string>()
+                .Concat(A.Split(' '))
+                .Concat(B.Split(' '))
+                .GroupBy(x => x)
+                .Where(x => x.Count() == 1)
+                .Select(x => x.Key)
+                .ToArray();
         }
     }
 }
