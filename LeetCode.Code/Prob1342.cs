@@ -2,7 +2,7 @@
 
 namespace LeetCode.Code
 {
-    public class Prob342
+    public class Prob1342
     {
         public bool IsPowerOfFour(int num)
         {

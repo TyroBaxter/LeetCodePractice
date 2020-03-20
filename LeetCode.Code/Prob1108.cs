@@ -1,11 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace LeetCode.Code
+﻿namespace LeetCode.Code
 {
     public class Prob1108
     {
-
+        public string DefangIPaddr(string address)
+        {
+            return address.Replace(".", "[.]");
+        }
     }
 }
