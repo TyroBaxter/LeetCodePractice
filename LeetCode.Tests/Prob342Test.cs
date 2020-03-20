@@ -1,8 +1,7 @@
-using LeetCode;
+using LeetCode.Code;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
 
-namespace LeetCodeUnitTests
+namespace LeetCode.Tests
 {
     [TestClass]
     public class Prob342Test
