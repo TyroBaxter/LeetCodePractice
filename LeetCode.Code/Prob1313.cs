@@ -8,40 +8,63 @@ namespace LeetCode.Code
     {
         public int[] DecompressRLElist(int[] nums)
         {
-            //split up array into pairs
-            var pairArray = ChunkArrayIntoPairs(nums);
 
-            //first value is the pair assigned to 'frequency'
-            //second value in the pair is assigned to 'value'
-            //the result of each pair array will generate its own new array
-            var result = CreateResultArray(pairArray[0], pairArray[1]);
+            //split up array into pairs
+            var pairs = ChunkArrayIntoPairs(nums);
 
             //all result arrays are then concatenated and returned as one final array 
-            return ConcatenateAllThePairArrays(result);
+            var buffer = new List<int>();
+            foreach (var pair in pairs)
+            {
+                var results = CreateResultList(pair);
+                foreach (var r in results)
+                {
+                    buffer.Add(r);
+                }
+
+            }
+
+            return buffer.ToArray();
         }
 
-        private int[] ChunkArrayIntoPairs(int[] sourceArray)
+        //first value is the pair assigned to 'frequency'
+        //second value in the pair is assigned to 'value'
+        //the result of each pair array will generate its own new list
+        private List<RleDto> ChunkArrayIntoPairs(int[] sourceArray)
         {
-            int[] buffer = null;
+
+            List<RleDto> buffer = new List<RleDto>();
 
             for (int i = 0; i < sourceArray.Length; i += 2)
             {
-                buffer = new int[2];
-                Array.Copy(sourceArray, i, buffer, 0, 2);
+                buffer.Add(new RleDto
+                {
+                    Frequency = sourceArray[i],
+                    Value = sourceArray[i + 1]
+                });
+            }
+            return buffer;
+
+        }
+
+        private List<int> CreateResultList(RleDto pair)
+        {
+            var decompressedData = new List<int>();
+
+            for (int i = 0; i < pair.Frequency; i++)
+            {
+                decompressedData.Add(pair.Value);
             }
 
-            return buffer;
-        }
-
-        private int[] CreateResultArray(int frequency, int value)
-        {
+            return decompressedData;
 
         }
 
-        private int[] ConcatenateAllThePairArrays(int[] args)
-        {
+    }
 
-        }
-
+    public class RleDto
+    {
+        public int Frequency { get; set; }
+        public int Value { get; set; }
     }
 }
