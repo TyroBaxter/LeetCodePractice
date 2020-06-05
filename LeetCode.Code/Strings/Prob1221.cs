@@ -15,6 +15,7 @@ namespace LeetCode.Code.Strings
         {
             //Loop from left to right maintaining a balance variable when it gets an L increase it by one 
             //otherwise decrease it by one.
+            var answer = 0;
             var balance = 0;
             foreach (var s in unbalancedInput)
             {
@@ -26,7 +27,14 @@ namespace LeetCode.Code.Strings
                 {
                     balance--;
                 }
+
+                if (balance == 0)
+                {
+                    answer++;
+                }
             }
+
+            return answer;
             //Whenever the balance variable reaches zero then we increase the answer by one.
         }
     }
