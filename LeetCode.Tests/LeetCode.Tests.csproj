@@ -19,8 +19,4 @@
     <ProjectReference Include="..\LeetCode.Code\LeetCode.Code.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="ArraysTests\" />
-  </ItemGroup>
-
 </Project>
