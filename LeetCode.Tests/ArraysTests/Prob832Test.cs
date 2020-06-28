@@ -24,12 +24,12 @@ namespace LeetCode.Tests.ArraysTests
                 new int [] { 0, 0, 0}
             });
 
-            CollectionAssert.AreEquivalent(result, new int[][]
-            {
-                new int[] {1,0,0},
-                new int[] {0,1,0},
-                new int[] {1,1,1}
-            });
+            CollectionAssert.AreEqual(result[0], new int[] { 1, 0, 0 });
+
+            CollectionAssert.AreEqual(result[1], new int[] { 0, 1, 0 });
+
+            CollectionAssert.AreEqual(result[2], new int[] { 1, 1, 1 });
+            
         }
 
         [TestMethod]
@@ -48,13 +48,10 @@ namespace LeetCode.Tests.ArraysTests
                 new int[]{1,0,1,0}
             });
 
-            CollectionAssert.AreEquivalent(result, new int[][]
-            {
-                new int[]{1,1,0,0},
-                new int[]{0,1,1,0},
-                new int[]{0,0,0,1},
-                new int[]{1,0,1,0}
-            });
+            CollectionAssert.AreEqual(result[0], new int[] { 1, 1, 0, 0 });
+            CollectionAssert.AreEqual(result[1], new int[] { 0, 1, 1, 0 });
+            CollectionAssert.AreEqual(result[2], new int[] { 0, 0, 0, 1 });
+            CollectionAssert.AreEqual(result[3], new int[] { 1, 0, 1, 0 });
         }
     }
 }
