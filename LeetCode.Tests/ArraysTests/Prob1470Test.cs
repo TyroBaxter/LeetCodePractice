@@ -17,7 +17,7 @@ namespace LeetCode.Tests.ArraysTests
             //Explanation: Since x1 = 2, x2 = 5, x3 = 1, y1 = 3, y2 = 4, y3 = 7 then the answer is [2, 3, 5, 4, 1, 7].
             var p = new Prob1470();
 
-            var result = p.Shuffle(new int[] { 2, 5, 1, 3, 4, 7 }, 3);
+            var result = Prob1470.Shuffle(new int[] { 2, 5, 1, 3, 4, 7 }, 3);
             CollectionAssert.AreEquivalent(result, new int[] { 2, 3, 5, 4, 1, 7 });
         }
 
@@ -28,7 +28,7 @@ namespace LeetCode.Tests.ArraysTests
             //Output: [1, 4, 2, 3, 3, 2, 4, 1]
             var p = new Prob1470();
 
-            var result = p.Shuffle(new int[] { 1, 2, 3, 4, 4, 3, 2, 1 }, 4);
+            var result = Prob1470.Shuffle(new int[] { 1, 2, 3, 4, 4, 3, 2, 1 }, 4);
             CollectionAssert.AreEquivalent(result, new int[] { 1, 4, 2, 3, 3, 2, 4, 1 });
         }
 
@@ -39,7 +39,7 @@ namespace LeetCode.Tests.ArraysTests
             //Output: [1, 2, 1, 2]
             var p = new Prob1470();
 
-            var result = p.Shuffle(new int[] { 1, 1, 2, 2 }, 2);
+            var result = Prob1470.Shuffle(new int[] { 1, 1, 2, 2 }, 2);
             CollectionAssert.AreEquivalent(result, new int[] { 1, 2, 1, 2 });
         }
     }

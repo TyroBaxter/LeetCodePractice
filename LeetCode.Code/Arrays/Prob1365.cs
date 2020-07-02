@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Linq;
 
-namespace LeetCode.Code
+namespace LeetCode.Code.Arrays
 {
     public class Prob1365
     {
@@ -26,17 +24,16 @@ namespace LeetCode.Code
             return newNumArray;
         }
 
-        private int CountNumbersSmallerThan(int[] nums, int num)
+        private static int CountNumbersSmallerThan(int[] nums, int num)
         {
-            var counter = 0; 
-            foreach (var number in nums)
-            {
-                if (num > number)
-                {
-                    counter++;
-                }
-            }
-            return counter;
+            //foreach (var number in nums)
+            //{
+            //    if (num > number)
+            //    {
+            //        counter++;
+            //    }
+            //}
+            return nums.Count(number => num > number);
         }
 
 

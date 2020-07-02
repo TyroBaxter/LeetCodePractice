@@ -1,4 +1,5 @@
 ﻿using LeetCode.Code;
+using LeetCode.Code.Arrays;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace LeetCode.Tests

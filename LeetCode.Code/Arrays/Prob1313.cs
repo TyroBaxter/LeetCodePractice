@@ -1,8 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
+using System.Linq;
 
-namespace LeetCode.Code
+namespace LeetCode.Code.Arrays
 {
     public class Prob1313
     {
@@ -13,29 +12,28 @@ namespace LeetCode.Code
             var pairs = ChunkArrayIntoPairs(nums);
 
             //all result arrays are then concatenated and returned as one final array 
-            var buffer = new List<int>();
-            foreach (var pair in pairs)
-            {
-                var results = CreateResultList(pair);
-                foreach (var r in results)
-                {
-                    buffer.Add(r);
-                }
+            //foreach (var pair in pairs)
+            //{
+            //    var results = CreateResultList(pair);
+            //    foreach (var r in results)
+            //    {
+            //        buffer.Add(r);
+            //    }
 
-            }
+            //}
 
-            return buffer.ToArray();
+            return pairs.SelectMany(CreateResultList).ToArray();
         }
 
         //first value is the pair assigned to 'frequency'
         //second value in the pair is assigned to 'value'
         //the result of each pair array will generate its own new list
-        private List<RleDto> ChunkArrayIntoPairs(int[] sourceArray)
+        private static IEnumerable<RleDto> ChunkArrayIntoPairs(IReadOnlyList<int> sourceArray)
         {
 
-            List<RleDto> buffer = new List<RleDto>();
+            var buffer = new List<RleDto>();
 
-            for (int i = 0; i < sourceArray.Length; i += 2)
+            for (var i = 0; i < sourceArray.Count; i += 2)
             {
                 buffer.Add(new RleDto
                 {
@@ -47,11 +45,11 @@ namespace LeetCode.Code
 
         }
 
-        private List<int> CreateResultList(RleDto pair)
+        private static List<int> CreateResultList(RleDto pair)
         {
             var decompressedData = new List<int>();
 
-            for (int i = 0; i < pair.Frequency; i++)
+            for (var i = 0; i < pair.Frequency; i++)
             {
                 decompressedData.Add(pair.Value);
             }

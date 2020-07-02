@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace LeetCode.Code
+namespace LeetCode.Code.Arrays
 {
     public class Prob884
     {
@@ -38,16 +38,15 @@ namespace LeetCode.Code
                 
             }
 
-            var uniqueWords = new List<string>();
-            foreach (var word in countsByWord)
-            {
-                if (word.Value == 1)
-                {
-                    uniqueWords.Add(word.Key);
-                }
+            //foreach (var word in countsByWord)
+            //{
+            //    if (word.Value == 1)
+            //    {
+            //        uniqueWords.Add(word.Key);
+            //    }
                   
-            }
-            var finalUniqueWords = uniqueWords.ToArray();
+            //}
+            var finalUniqueWords = (from word in countsByWord where word.Value == 1 select word.Key).ToArray();
             return finalUniqueWords;
         }
 

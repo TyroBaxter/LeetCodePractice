@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 
@@ -20,15 +21,17 @@ namespace LeetCode.Code.Arrays
         {
 
             //Get the data into a better format 
-            var betterData = new List<List<int>>();
+            //var betterData = new List<List<int>>();
             
-            for (int i = 0; i < A.Length; i++)
-            {
-                int[] innerDataFromInput = A[i];
-                var chunkedData = new List<int>(innerDataFromInput);
+            //for (int i = 0; i < A.Length; i++)
+            //{
+            //    int[] innerDataFromInput = A[i];
+            //    var chunkedData = new List<int>(innerDataFromInput);
              
-                betterData.Add(chunkedData);
-            }
+            //    betterData.Add(chunkedData);
+            //}
+            var betterData = A.Select(innerDataFromInput => new List<int>(innerDataFromInput)).ToList();
+            
 
             //reverse the data 
             ReverseTheData(betterData);
@@ -45,7 +48,7 @@ namespace LeetCode.Code.Arrays
             //        chunkedData.SetValue(item, )
             //    }
             //}
-            for (int i = 0; i < betterData.Count; i++)
+            for (var i = 0; i < betterData.Count; i++)
             {
                 List<int> innerDataFromBetterData = betterData[i];
                 flipItAndInvertIt[i] = innerDataFromBetterData.ToArray();
@@ -61,12 +64,12 @@ namespace LeetCode.Code.Arrays
 
         private void FlipAllTheDigits(List<List<int>> input)
         {
-            input.ForEach(x => FlipSomeOfTheDigits(x));
+            input.ForEach(FlipSomeOfTheDigits);
         }
 
         private void FlipSomeOfTheDigits(List<int> input)
         {
-            for (int i = 0; i < input.Count; i++)
+            for (var i = 0; i < input.Count; i++)
             {
                 if (input[i] == 1)
                 {
