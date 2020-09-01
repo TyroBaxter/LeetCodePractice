@@ -25,7 +25,24 @@ namespace LeetCode.Code.LinkedList
 
         public static ListNode MiddleNode(ListNode head)
         {
-            return null;
+            var currentNodePosition = head; 
+            // variable to store counter and interate through nodes in the singly-linked list 
+            var counter = 0;
+            while (currentNodePosition != null)
+            {
+                currentNodePosition = currentNodePosition.next;
+                counter++;
+            }
+
+            var middleNodePositionalValue = (counter/2) + 1;
+
+            var temp = head; 
+            for (int i = 1; i < middleNodePositionalValue; i++)
+            {
+                temp = temp.next;
+            }
+                        
+            return temp;
         }
 
     }

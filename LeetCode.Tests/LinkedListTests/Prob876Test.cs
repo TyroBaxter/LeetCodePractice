@@ -42,7 +42,7 @@ namespace LeetCode.Tests.LinkedListTests
                 }
             });
 
-            Assert.AreEqual(result, 3);
+            Assert.AreEqual(result.val, 3);
 
 
         }
@@ -95,7 +95,7 @@ namespace LeetCode.Tests.LinkedListTests
 
             });
 
-            Assert.AreEqual(result, 4);
+            Assert.AreEqual(result.val, 4);
         }
 
 
