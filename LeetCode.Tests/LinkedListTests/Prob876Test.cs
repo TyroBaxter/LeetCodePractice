@@ -21,19 +21,19 @@ namespace LeetCode.Tests.LinkedListTests
         public void It_should_return_3()
         {
             //sorry 
-            var result = Prob876.MiddleNode(new Prob876.ListNode
+            var result = Prob876.MiddleNode(new ListNode
             {
                 val = 1,
-                next = new Prob876.ListNode
+                next = new ListNode
                 {
                     val = 2,
-                    next = new Prob876.ListNode
+                    next = new ListNode
                     {
                         val = 3,
-                        next = new Prob876.ListNode
+                        next = new ListNode
                         {
                             val = 4,
-                            next = new Prob876.ListNode
+                            next = new ListNode
                             {
                                 val = 5
                             }
