@@ -55,32 +55,32 @@ namespace LeetCode.Tests.LinkedListTests
         [TestMethod]
         public void It_should_return_4()
         {
-            var result = Prob876.MiddleNode(new Prob876.ListNode
+            var result = Prob876.MiddleNode(new ListNode
             {
                 val = 1,
                 next =
 
-                    new Prob876.ListNode
+                    new ListNode
                     {
                         val = 2,
                         next =
 
-                            new Prob876.ListNode
+                            new ListNode
                             {
                                 val = 3,
                                 next =
 
-                                    new Prob876.ListNode
+                                    new ListNode
                                     {
                                         val = 4,
                                         next =
 
-                                            new Prob876.ListNode
+                                            new ListNode
                                             {
                                                 val = 5,
                                                 next =
 
-                                                    new Prob876.ListNode
+                                                    new ListNode
                                                     {
                                                         val = 6
                                                     }

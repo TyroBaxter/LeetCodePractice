@@ -55,7 +55,7 @@ namespace LeetCode.Tests.LinkedListTests
                         }
                     }
                 }
-            });
+            }));
         }
     }
 }
