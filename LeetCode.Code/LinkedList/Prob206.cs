@@ -9,33 +9,27 @@ namespace LeetCode.Code.LinkedList
         //Can be implemented iteratively or recursively 
         public ListNode ReverseList(ListNode head)
         {
-            //create new list 
-            var temp = new List<int>();
+            if (head == null)
+            {
+                return head;
+            }
+            //create new placeholders
+            var currentPosition = new ListNode();
+            var previousPosition = new ListNode();
 
-
-            //iteratete through the ListNode and place values into array
+            //iteratete through the ListNode and place values into placeholders
             while (head != null)
             {
-                temp.Add(head.val);
-                head = head.next;
-                
-            }
-            //call list.reverse 
-             temp.Reverse();
-            //iterate through the reversed list and place values into new linked list
-            var reversedInput = new ListNode();
-            var currentPosition = reversedInput;
-            foreach (var value in temp)
-            {
-                currentPosition.val = value;
-                //the link portion of the linked list 
-                currentPosition.next = new ListNode();
-                currentPosition = currentPosition.next;
-                
+                currentPosition = head.next;
+                head.next = previousPosition;
+                previousPosition = head;
+                head = currentPosition;
             }
 
-            //return the new linked list 
-            return reversedInput;
+            return previousPosition;
+
         }
+
+
     }
 }
