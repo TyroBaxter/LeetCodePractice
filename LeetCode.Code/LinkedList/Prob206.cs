@@ -17,7 +17,7 @@ namespace LeetCode.Code.LinkedList
             var currentPosition = new ListNode();
             var previousPosition = new ListNode();
 
-            //iteratete through the ListNode and place values into placeholders
+            //iterate through the ListNode and place values into placeholders
             while (head != null)
             {
                 currentPosition = head.next;
