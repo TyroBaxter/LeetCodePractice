@@ -13,13 +13,19 @@ namespace LeetCode.Code.LinkedList
         //    Return the decimal value of the number in the linked list.
         public int GetDecimalValue(ListNode head)
         {
-            //traverse the linked list, hit next until it is null 
+            //While this solution is straightforward and more human readable than others, e.g.
+            //using bitwise operators, the use of StringBuilder introduces increased space
+            //complexity
 
-            //while traversing the linked list, place each .val in a list 
+            StringBuilder temp = new StringBuilder();
+            while (head != null)
+            {
+                temp.Append(head.val);
+                head = head.next;
+            }
 
-            //convert binary to decimal (??) 
-
-            return 0;
+            int result = Convert.ToInt32(temp.ToString(), 2);
+            return result;
         }
     }
 }

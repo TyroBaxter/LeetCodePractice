@@ -9,8 +9,8 @@ namespace LeetCode.Code.Extensions
     {
         public static ListNode ToLinkedList(this int[] input)
         {
-            ListNode currentPosition = null;
-            ListNode previousPosition = null;
+            ListNode currentPosition = new ListNode();
+            ListNode previousPosition = new ListNode();
             foreach (var item in input)
             {
                 //assign the current int item to the currentPosition value 
