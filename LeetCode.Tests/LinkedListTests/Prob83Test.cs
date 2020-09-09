@@ -14,12 +14,32 @@ namespace LeetCode.Tests.LinkedListTests
         public void It_should_return_1_2()
         {
             var p = new Prob83();
-            var result = p.DeleteDuplicates(new[]
+            //var result = p.DeleteDuplicates(new[]
+            //{
+            //    1,1,2
+            //}.ToLinkedList());
+            var result = p.DeleteDuplicates(new ListNode
             {
-                1,1,2
-            }.ToLinkedList());
+                val = 1,
+                next = new ListNode
+                {
+                    val = 1,
+                    next = new ListNode
+                    {
+                        val = 2
 
-            Assert.AreEqual(result, new[] {1,2 }.ToLinkedList() );
+                    }
+                }
+            });
+
+            Assert.AreEqual(result, (new ListNode
+            {
+                val = 1,
+                next = new ListNode
+                {
+                    val = 2
+                }
+            }));
         }
 
         [TestMethod]
@@ -31,7 +51,7 @@ namespace LeetCode.Tests.LinkedListTests
                 1,1,2,3,3
             }.ToLinkedList());
 
-            Assert.AreEqual(result, new[] {1,2,3}.ToLinkedList());
+            Assert.AreEqual(result, new[] { 1, 2, 3 }.ToLinkedList());
         }
     }
 }

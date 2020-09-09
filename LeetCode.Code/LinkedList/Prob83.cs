@@ -7,7 +7,7 @@ namespace LeetCode.Code.LinkedList
     public class Prob83
     {
         //Given a sorted linked list, delete all duplicates such that each element appear only 
-        public ListNode DeleteDuplicates(ListNode head)
+        public ListNode DeleteDuplicatesTakeTwo(ListNode head)
         {
             var result = new ListNode();
             Dictionary<int, int> temp = new Dictionary<int, int>();
@@ -22,7 +22,7 @@ namespace LeetCode.Code.LinkedList
 
             //foreach value in the temp dictionary, add it to the result linked list 
             //var currentPosition = result.val;
-            
+
             foreach (var value in temp.Values)
             {
                 result.val = value;
@@ -31,5 +31,23 @@ namespace LeetCode.Code.LinkedList
             //return the result linked list                      
             return result;
         }
+
+        public ListNode DeleteDuplicates(ListNode head)
+        {
+            var temp = head;
+            while (head != null && head.next != null)
+            {
+                if (head.val == head.next.val)
+                {
+                    head.next = head.next.next;
+                }
+                else
+                {
+                    head = head.next;
+                }
+            }
+            return temp;
+        }
     }
 }
+
