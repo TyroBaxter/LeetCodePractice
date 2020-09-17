@@ -16,7 +16,7 @@ namespace LeetCode.Tests.ArraysTests
         public void It_should_return_odds_and_evens()
         {
             var p = new Prob905();
-            var actual = p.SortArrayByParity(new int[]{3,1,2,3});
+            var actual = p.SortArrayByParity(new int[]{3,1,2,4});
             var result = new int[] {4,2,1,3};
 
             CollectionAssert.AreEquivalent(result, actual);
