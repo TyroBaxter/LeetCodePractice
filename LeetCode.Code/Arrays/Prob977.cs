@@ -10,7 +10,12 @@ namespace LeetCode.Code.Arrays
         //return an array of the squares of each number, also in sorted non-decreasing order.
         public int[] SortedSquares(int[] A)
         {
-            return null;
+            foreach (var num in A)
+            {
+                Math.Pow(num,2);
+            }
+
+            return A;
         }
     }
 }
