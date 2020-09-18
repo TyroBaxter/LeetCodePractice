@@ -19,7 +19,7 @@ namespace LeetCode.Tests.ArraysTests
             var result = p.SortedSquares(new int[] { -4, -1, 0, 3, 10 });
             var actual = new int[] { 0, 1, 9, 16, 100 };
 
-            CollectionAssert.AreEquivalent(actual, result);
+            CollectionAssert.AreEqual(actual, result);
         }
 
         //Input: [-7,-3,2,3,11]
@@ -31,7 +31,7 @@ namespace LeetCode.Tests.ArraysTests
             var result = p.SortedSquares(new int[] { -7, -3, 2, 3, 11 });
             var actual = new int[] { 4, 9, 9, 49, 121 };
 
-            CollectionAssert.AreEquivalent(actual, result);
+            CollectionAssert.AreEqual(actual, result);
         }
     }
 }

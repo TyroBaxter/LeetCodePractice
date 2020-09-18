@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace LeetCode.Code.Arrays
@@ -10,10 +11,12 @@ namespace LeetCode.Code.Arrays
         //return an array of the squares of each number, also in sorted non-decreasing order.
         public int[] SortedSquares(int[] A)
         {
-            foreach (var num in A)
+            for (int i = 0; i < A.Length; i++)
             {
-                Math.Pow(num,2);
+                A[i] = A[i] * A[i];
             }
+
+            Array.Sort(A);
 
             return A;
         }
